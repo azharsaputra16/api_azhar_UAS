@@ -1,20 +1,32 @@
-const express =require('express')
-const app = express()
-const port = 3000
-const bodyparser = require('body-parser')
+const express = require('express');
+const app = express();
+const port = 3000;
+const bodyParser = require('body-parser');
+const path = require('path');
 
-app.get ('/',(req,res) =>{
-    res.send('selamat datang')
-})
+// Middleware to serve static files
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(bodyparser.urlencoded({extended:false}))
-app.use(bodyparser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-// import route posts
-const postsRouter = require('./routes/posts.js')
-// utk menggunakan route post di express
-app.use('/api/posts', postsRouter)
+// Import route posts
+const postsRouter = require('./routes/posts');
+app.use('/api/posts', postsRouter);
 
-app.listen(port, ()=>{
-    console.log(`aplikasi berjalan di http://localhost:${port}`)
-})
+// Route to serve the main HTML page
+app.get('/', (req, res) => {
+    const filePath = path.join(__dirname, 'public', 'design.html');
+    console.log(`Attempting to send file: ${filePath}`); // Log the file path
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            console.error('Error sending file:', err); // Log any errors
+            res.status(err.status).end();
+        }
+    });
+});
+
+// Start the server
+app.listen(port, () => {
+    console.log(`This application is running at http://localhost:${port}`);
+});

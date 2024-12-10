@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Inspired App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            color: #333;
+            text-align: center;
+            background-image: url('https://i.ytimg.com/vi/yFg9s5sHOo4/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+        .header-container {
+            background-color: rgba(76, 175, 80, 0.8);
+            padding: 80px;
+            position: relative;
+        }
+        .logo-image {
+            width: 300px;
+            position: absolute;
+            top: 10px;
+        }
+        .logo-image:first-child {
+            left: 10px;
+        }
+        .logo-image:last-child {
+            right: 10px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #ffffff;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(50px, 1fr));
+            gap: 16px;
+            padding: 250px;
+            justify-items: center; /* Centers the items in the grid */
+        }
+        .block {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            aspect-ratio: 1; /* Membuat blok persegi */
+        }
+        .container .block:nth-child(10) {
+            width: 80%; /* Increase width */
+            grid-column: span 3; /* Make it span across the whole grid */
+            aspect-ratio: 1.5; /* Make the block slightly wider */
+            margin-left: auto; /* Center the block */
+            margin-right: auto; /* Center the block */
+        }
+        .block img {
+    width: 55%;             /* The image will take up 50% of the block's width */
+    height: auto;           /* The height will adjust automatically to maintain the aspect ratio */
+    object-fit: cover;      /* Ensures the image covers the area of the block without distortion, cropping if necessary */
+    margin-bottom: 5px;     /* Adds a 5px space below the image */
+    border-radius: 15px;    /* Adds curved corners to the image (adjust the value to change the curvature) */
+}
+
+        .block:hover {
+            background-color: rgba(25, 118, 210, 0.8);
+            transform: scale(1.05);
+        }
+        .button {
+            margin-top: 50px;
+            padding: 10px 20px;
+            background-color: #26fe00;
+            color: white;
+            border: black;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            position: relative; /* Allows the button to be positioned */
+            top: -180px; /* Move the button 30px upwards */
+        }
+        .button:hover {
+            background-color: #E64A19;
+        }
+        .website-link {
+            margin-top: 45px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b22603;
+            color: white;
+            text-decoration: arial;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+        .website-link:hover {
+            background-color: #45a049;
+        }
+
+        /* New footer section with curved bottom border */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer::before {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: #2c3e50;
+            border-radius: 50%;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .footer img {
+    width: 65px;                /* Resize the image to 50px wide (adjust as needed) */
+    height: center;               /* Keep the aspect ratio intact */
+    border-radius: 50%;         /* Optional: Make the image circular */
+    margin-left: 40px;         /* Add some space between the image and the text */
+    margin-bottom: -25px;
+    margin-right: 0;
+}
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <img src="logo.webp" alt="Minecraft logo" class="logo-image">
+        <h1>VIVA FANTASY THE MOVIE</h1>
+        <img src="logo.webp" alt="Minecraft logo" class="logo-image">
+    </div>
+    <div class="container">
+        <div class="block" onclick="showPoem(1)">
+            <img src="marvel.jpg" alt="Marvel Character">
+            <span>Marvel</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Marvel" target="_blank" class="website-link">Visit Marvel</a>
+        </div>
+        <div class="block" onclick="showPoem(2)">
+            <img src="peppey.jpg" alt="Peppey Character">
+            <span>Peppey</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Peppey" target="_blank" class="website-link">Visit Peppey</a>
+        </div>
+        <div class="block" onclick="showPoem(3)">
+            <img src="malik.jpg" alt="Malik Character">
+            <span>Malik</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Malik" target="_blank" class="website-link">Visit Malik</a>
+        </div>
+        <div class="block" onclick="showPoem(4)">
+            <img src="samsul.jpg" alt="Samsul Character">
+            <span>Samsul</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Samsul" target="_blank" class="website-link">Visit Samsul</a>
+        </div>
+        <div class="block" onclick="showPoem(5)">
+            <img src="pakgm.jpg" alt="Raja GM Character">
+            <span>Raja GM</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Pakgm" target="_blank" class="website-link">Visit Raja GM</a>
+        </div>
+        <div class="block" onclick="showPoem(6)">
+            <img src="ayon.jpg" alt="Ayon Character">
+            <span>Ayon</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Ayon" target="_blank" class="website-link">Visit Ayon</a>
+        </div>
+        <div class="block" onclick="showPoem(7)">
+            <img src="via.webp" alt="Via Character">
+            <span>Via</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Via" target="_blank" class="website-link">Visit Via</a>
+        </div>
+        <div class="block" onclick="showPoem(8)">
+            <img src="herobrine.jpeg" alt="Herobrine Character">
+            <span>Herobrine</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Herobrine" target="_blank" class="website-link">Visit Herobrine</a>
+        </div>
+        <div class="block" onclick="showPoem(9)">
+            <img src="azre.jpg" alt="Azrealon Character">
+            <span>Azrealon</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Azrealon" target="_blank" class="website-link">Visit Azrealon</a>
+        </div>
+        <div class="block" onclick="showPoem(10)">
+            <img src="zifa.jpg" alt="Zifa Character">
+            <span>Zifa</span>
+            <a href="https://vivafantasy.fandom.com/id/wiki/Zifa" target="_blank" class="website-link">Visit Zifa</a>
+        </div>
+    </div>
+    
+    <button class="button" onclick="showWelcomeMessage()">thanks for watching</button>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>Created by [azhar saputra].</p>
+        <a href="https://wa.me/6287842231978" target="_blank" class="website-link">contact informasi</a>
+        <img src="azz.jpg" alt="Creator Image">
+    </div>
+
+    <script>
+        function showWelcomeMessage() {
+            alert('jika ada yang ditanyakan / saran contact ke \n085842231978');
+        }
+
+        function showPoem(blockNumber) {
+            const poems = {
+                1: "MARVEL \n main character yang selalu kurang percaya diri padahal memiliki kekuatan yang hebat/peluang",
+                2: "PEPPEY \n adik si marvel yang jatuh dalam kejahatan namun telah disadarkan oleh marvel dan samsul sehingga menjadi baik",
+                3: "MALIK \n seorang raja yang pantang menyerah, emosi karena dendam karena ayahnya terbunuh saat peperangan",
+                4: "SAMSUL \n orang yang polos namun mengerti keadaaan suadara saudaranya ketika saudaranya di hina ia akan overpower",
+                5: "RAJA GM\n raja yang baik hati dan lembut namun memiliki kekuatan yang tidak lembut",
+                6: "AYON raja \n raja yang sangat kuat dan berkekuatan air sangat memiliki kekuatan yang hebat",
+                7: "VIA \n orang yang hanyut dalam kekuatan api dan tak bisa mengendalikan sihir api nya sehingga ia terkena imbasnya",
+                8: "HEROBRINE \n steve yang ter rasuki dewa herobrine yang memiliki kekuatan sangat sangat over power tak ada satupun dapat menumbangkannya",
+                9: "AZREALON \n dewa dari babylonia yang berkhianat kepada koloni nya yang terjun untuk membantu para manusia, dia juga menyamar menjadi manusia",
+                10: "ZIFA \n utusan calvin/seorang yang telah membunuh ayah malik dan ia disuruh untuk membantai manusia",
+            };
+            alert(poems[blockNumber] || "Karakter tidak ditemukan.");
+        }
+    </script>
+</body>
+</html>
