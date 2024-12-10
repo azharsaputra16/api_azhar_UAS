@@ -4,7 +4,7 @@ const port = 3000
 const bodyparser = require('body-parser')
 
 app.get ('/',(req,res) =>{
-    res.send('Azhar')
+    res.send('selamat datang')
 })
 
 app.use(bodyparser.urlencoded({extended:false}))
